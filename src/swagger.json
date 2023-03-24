@@ -1,0 +1,57 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "title": "Minha API de Itens",
+      "description": "API para gerenciamento de itens",
+      "version": "1.0.0"
+    },
+    "paths": {
+      "/items": {
+        "get": {
+          "summary": "Lista todos os itens",
+          "responses": {
+            "200": {
+              "description": "Lista de itens",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/Item"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "components": {
+      "schemas": {
+        "Item": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer",
+              "description": "Identificador único do item"
+            },
+            "name": {
+              "type": "string",
+              "description": "Nome do item"
+            },
+            "description": {
+              "type": "string",
+              "description": "Descrição do item"
+            },
+            "price": {
+              "type": "number",
+              "format": "float",
+              "description": "Preço do item"
+            }
+          }
+        }
+      }
+    }
+  }
+  
